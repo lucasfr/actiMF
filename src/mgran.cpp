@@ -2,7 +2,7 @@
 
 // This software is licensed under an MIT License.
 
-// Copyright(c) 2018 Lucas G S França, José Garcia Vivas Miranda.
+// Copyright(c) 2018 Lucas G S França, Pedro Montoya, José Garcia Vivas Miranda.
 
 // Permission is hereby granted,free of charge, to any person obtaining a copy 
 // of this software and associated documentation files(the "Software"),to deal 
@@ -22,12 +22,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 // SOFTWARE.
 
-// Authors : Lucas França(1, 2), José Garcia Vivas Miranda(1, 2)
+// Authors : Lucas França(1, 2), Pedro Montoya(3), José Garcia Vivas Miranda(1, 2)
 
 // 1 Department of Clinical and Experimental Epilepsy, UCL Queen Square Institute
 // of Neurology, University College London, London, United Kingdom
 
-// 2 Institute of Physics, Federal University of Bahia, Salvador, Brazil
+// 2 Department of Physics of the Earth and the Environment, Institute of Physics, 
+// Federal University of Bahia, Salvador, Brazil
+
+// 3 Research Institute of Health Sciences (IUNICS), University of the Balearic
+// Islands, Palma de Mallorca, Spain
 
 // email address : lucas.franca .14 @ucl.ac.uk, vivasm@gmail.com
 // Website : https : //lucasfr.github.io/

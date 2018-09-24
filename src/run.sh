@@ -2,7 +2,7 @@
 
 # This software is licensed under an MIT License.
 
-# Copyright (c) 2018 Lucas G S França, José Garcia Vivas Miranda.
+# Copyright (c) 2018 Lucas G S França, Pedro Montoya, José Garcia Vivas Miranda.
 
 # Permission is hereby granted, free of charge, to any person obtaining a 
 # copy of this software and associated documentation files (the "Software"), 
@@ -22,30 +22,55 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 # DEALINGS IN THE SOFTWARE.
 
-# Authors: Lucas França(1,2), YJosé Garcia Vivas Miranda(1,2)
+# Authors: Lucas França(1,2), Pedro Montoya(3), José Garcia Vivas Miranda(1,2)
 
 # 1 Department of Clinical and Experimental Epilepsy, UCL Queen Square Institute 
 # of Neurology, University College London, London, United Kingdom
 
-# 2 Institute of Physics, Federal University of Bahia, Salvador, Brazil
+# 2 Department of Physics of the Earth and the Environment, Institute of Physics, 
+# Federal University of Bahia, Salvador, Brazil
+
+# 3 Research Institute of Health Sciences (IUNICS), University of the Balearic 
+# Islands, Palma de Mallorca, Spain
 
 # email address: lucas.franca.14@ucl.ac.uk, vivasm@gmail.com
 # Website: https://lucasfr.github.io/
 
+# CREATING SUMMARY AND DUMP FILES
 touch data/resumDq.dat
 touch data/dump.dat
 
+# COMPILING mgran - CHHABRA-JENSEN MULTIFRACTAL ANALYSIS METHOD ROUTINE
 gcc -o mgran mgran.cpp -lm
+
+# CHANGING SETTINGS
 
 chmod u+x mgran
 
+# LOOP OVER ALL FILES IN FOLDER data
+
+########################################################################
+
+# COMMAND TO RUN mgran
+
+# ./mgran file_to_parse q_measures_extension alpha_measures_extension
+# -q +q q_steps max_dyadic_scale R2-q R2-alpha summary_or_spectra 
+# ignore_scales >> output_file
+
+########################################################################
+
 for file in data/*.txt
 do
-./mgran $file tdq tfa -25 25 0.3 9 0.7 0.7 R 2 >> /data/resumDq.dat
-mv ${file%.*}.tdq ${file%.*}._-25_25_0.3_9_0.7_0.7_R_2.tdq
-mv ${file%.*}.tfa ${file%.*}._-25_25_0.3_9_0.7_0.7_R_2.tfa
 
-./mgran $file tdq tfa -25 25 0.3 9 0.7 0.7 S 2 >> /data/dump.dat
-mv ${file%.*}.tdq ${file%.*}._-25_25_0.3_9_0.7_0.7_S_2.tdq
-mv ${file%.*}.tfa ${file%.*}._-25_25_0.3_9_0.7_0.7_S_2.tfa
+# SUMMARY EXPORT MODE
+
+./mgran $file tdq.txt tfa.txt -25 25 0.3 9 0.7 0.7 R 2 >> data/resumDq.dat
+mv ${file%%.*}.tdq.txt ${file%%.*}._-25_25_0.3_9_0.7_0.7_R_2.tdq.txt
+mv ${file%%.*}.tfa.txt ${file%%.*}._-25_25_0.3_9_0.7_0.7_R_2.tfa.txt
+
+# SPECTRA MODE
+
+./mgran $file tdq tfa -25 25 0.3 9 0.7 0.7 S 2 >> data/dump.dat
+mv ${file%%.*}.tdq ${file%%.*}._-25_25_0.3_9_0.7_0.7_S_2.tdq.txt
+mv ${file%%.*}.tfa ${file%%.*}._-25_25_0.3_9_0.7_0.7_S_2.tfa.txt
 done
