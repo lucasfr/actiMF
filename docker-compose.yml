@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  rstudio:
+    build:
+      context: ./rstudio
+    volumes:
+      - "./src:/home/rstudio"
+      - "./rstudio:/rstudio"
+    environment:
+    - PASSWORD = letmein
+    ports:
+      - 8787:8787

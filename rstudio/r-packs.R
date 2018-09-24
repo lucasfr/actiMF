@@ -1,0 +1,7 @@
+install.packages('devtools', repos='http://cran.us.r-project.org')
+library(devtools)
+install.packages('ggplot2', repos='http://cran.us.r-project.org')
+install.packages('RColorBrewer', repos='http://cran.us.r-project.org')
+install.packages('reshape2', repos='http://cran.us.r-project.org')
+install.packages('cowplot', repos='http://cran.us.r-project.org')
+install.packages('boot', repos='http://cran.us.r-project.org')
