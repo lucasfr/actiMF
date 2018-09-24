@@ -1,6 +1,37 @@
-/* Programa para c·lculo do espectro
-multifractal de dados porosimetria utilizando
-o mÈtodo de Chhabra e Jansen	*/
+// LICENSE
+
+// This software is licensed under an MIT License.
+
+// Copyright(c) 2018 Lucas G S Fran√ßa, Jos√© Garcia Vivas Miranda.
+
+// Permission is hereby granted,free of charge, to any person obtaining a copy 
+// of this software and associated documentation files(the "Software"),to deal 
+// in the Software without restriction, including without limitation the rights 
+// to use, copy, modify, merge, publish, distribute, sublicense,and / or sell 
+// copies of the Software, and to permit persons to whom the Software is furnished
+// to do so, subject to the following conditions :
+
+// The above copyright notice and this permission notice shall be included in all 
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS",WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+// SOFTWARE.
+
+// Authors : Lucas Fran√ßa(1, 2), Jos√© Garcia Vivas Miranda(1, 2)
+
+// 1 Department of Clinical and Experimental Epilepsy, UCL Queen Square Institute
+// of Neurology, University College London, London, United Kingdom
+
+// 2 Institute of Physics, Federal University of Bahia, Salvador, Brazil
+
+// email address : lucas.franca .14 @ucl.ac.uk, vivasm@gmail.com
+// Website : https : //lucasfr.github.io/
+
 
 
 #include <malloc.h>
@@ -12,8 +43,7 @@ o mÈtodo de Chhabra e Jansen	*/
 #define MAX(mx,x) (x>mx?x:mx)
 #define MIN(mx,x) (x<mx?x:mx)
 
-
-struct Hstc {
+                      struct Hstc {
     double sl,sd,r,in,ea,eb;
 };
 
@@ -55,7 +85,7 @@ int main(int argc, char **argv)
     double ao,EAo,RAo;
     double Amn=999,EAmn,RAmn;		// Alfa minimo, erro e r2
     double Amx=-999,EAmx,RAmx;	// Alfa maximo, erro e r2
-    double Aqmx=-999, Aqmn=999;	// q para o alfa maximo e mÌnimo.
+    double Aqmx=-999, Aqmn=999;	// q para o alfa maximo e mÔøΩnimo.
     int Io=0;					// Initial partition
 
     D2=D1=RD1=RD2=ED1=ED2=-1;	// -1 indicates that for the especific q (2 or 1) the R was not calculated
