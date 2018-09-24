@@ -22,3 +22,7 @@ RUN apt-get update && \
 ADD r-packs.R /rstudio/
 WORKDIR /rstudio
 RUN Rscript r-packs.R
+
+ADD . /data
+
+WORKDIR /home/rstudio

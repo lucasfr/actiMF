@@ -1,0 +1,4 @@
+1537809848195:system('chomd u+x run.sh')
+1537809855189:system('chmod u+x run.sh')
+1537809875214:system('chmod u+x run.sh')
+1537809875228:system('./run.sh')

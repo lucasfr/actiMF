@@ -20,6 +20,12 @@ To run the Docker container with the defined settings, please run:
 docker-compose up -d
 ```
 
+## Multifractal Analysis
+
+```
+docker-compose exec rstudio /bin/sh -c "./run.sh"
+```
+
 ## Figures
 
 All figures are in a R Markdown document to ease the visualisation. Open the link http://localhost:8787 and then the file actiMF.Rmarkdown when the RStudio loads.

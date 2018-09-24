@@ -6,6 +6,7 @@ services:
       context: ./rstudio
     volumes:
       - "./src:/home/rstudio"
+      - "./data:/home/rstudio/data"
       - "./rstudio:/rstudio"
     environment:
     - PASSWORD = letmein
