@@ -36,17 +36,11 @@
 # email address: lucas.franca.14@ucl.ac.uk, vivasm@gmail.com
 # Website: https://lucasfr.github.io/
 
-
-rm(list = ls())
-
-library(stringr)
-library(boot)
-library(reshape2)
-library(ggplot2)
+figure_5 <- function(){
 
 # LOADING FM PATIENTS DATA
 
-fm <- read.csv2("../R/fm/resumDq.dat",sep="",header = FALSE)
+fm <- read.csv2("data/R/fm/resumDq.dat",sep="",header = FALSE)
 
 patNames <- str_split_fixed(fm$V1, "_", 2)
 fm$V1 <- NULL
@@ -59,12 +53,12 @@ names(fm) <- c("Pat",	"state", "+q", "-q", "Dmin", "EDmin",
 
 # LOADING HEALTHY INDIVIDUALS DATA
 
-hm <- read.csv2("../R/hm/resumDq.dat",sep="",header = FALSE)
+hc <- read.csv2("data/R/hc/resumDq.dat",sep="",header = FALSE)
 
-patNames <- str_split_fixed(hm$V1, "_", 2)
-hm$V1 <- NULL
-hm <- cbind(patNames,hm)
-names(hm) <- c("Pat",	"state", "+q", "-q", "Dmin", "EDmin",
+patNames <- str_split_fixed(hc$V1, "_", 2)
+hc$V1 <- NULL
+hc <- cbind(patNames,hc)
+names(hc) <- c("Pat",	"state", "+q", "-q", "Dmin", "EDmin",
                "RDmin", "Dmax", "EDmax", "RDmax", "Do", "EDo",
                "RDo", "D1", "ED1", "RD1", "D2", "ED2", "RD2",
                "qAMin", "qAMax", "Ao", "EAo", "RAo", "Amax",
@@ -74,24 +68,24 @@ names(hm) <- c("Pat",	"state", "+q", "-q", "Dmin", "EDmin",
 
 fm_active <- fm[fm$state=="active.txt",]
 fm_sleep <- fm[fm$state=="sleep.txt",]
-hm_active <- hm[hm$state=="active.txt",]
-hm_sleep <- hm[hm$state=="sleep.txt",]
+hc_active <- hc[hc$state=="active.txt",]
+hc_sleep <- hc[hc$state=="sleep.txt",]
 
 
 # ESTIMATING PARABOLA RIGHT-SIDE
 
 fm_active$rs <- as.numeric(as.character(fm_active$Amax)) - as.numeric(as.character(fm_active$Ao))
 fm_sleep$rs <- as.numeric(as.character(fm_sleep$Amax)) - as.numeric(as.character(fm_sleep$Ao))
-hm_active$rs <- as.numeric(as.character(hm_active$Amax)) - as.numeric(as.character(hm_active$Ao))
-hm_sleep$rs <- as.numeric(as.character(hm_sleep$Amax)) - as.numeric(as.character(hm_sleep$Ao))
+hc_active$rs <- as.numeric(as.character(hc_active$Amax)) - as.numeric(as.character(hc_active$Ao))
+hc_sleep$rs <- as.numeric(as.character(hc_sleep$Amax)) - as.numeric(as.character(hc_sleep$Ao))
 
 
 # DIFFERENCES BETWEEN STATES FOR PARABOLA RIGHT-SIDE
 
 diff_fm_rs <- fm_active$rs - fm_sleep$rs
-diff_hm_rs <- hm_active$rs - hm_sleep$rs
+diff_hc_rs <- hc_active$rs - hc_sleep$rs
 
-diff_rs <- data.frame(diff_fm_rs, diff_hm_rs)
+diff_rs <- data.frame(diff_fm_rs, diff_hc_rs)
 names(diff_rs) <- c("Fibromyalgia", "Healthy")
 
 diff_rs <- melt(diff_rs)
@@ -99,7 +93,7 @@ diff_rs <- melt(diff_rs)
 leg1 <- paste(expression(p > 0.05))
 leg2 <- paste(expression(p < 0.05))
 
-ggplot(data = diff_rs, 
+a <- ggplot(data = diff_rs, 
        aes(x = variable, y = value, fill = variable)) + 
   geom_violin(trim=FALSE, 
               alpha = I(0.8)) + 
@@ -124,3 +118,7 @@ ggplot(data = diff_rs,
                                          fill = "transparent"),
         axis.title.x=element_blank(), 
         text = element_text(size=18))
+
+return(a)
+
+}

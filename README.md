@@ -30,7 +30,7 @@ docker-compose exec rstudio /bin/sh -c "./run.sh"
 
 ## Figures
 
-All figures are in a R Markdown document to ease the visualisation. Open the link http://localhost:8787 and then the file actiMF.Rmarkdown when the RStudio loads.
+All figures are in a R Markdown document to ease the visualisation. Open the link http://localhost:8787 and then the file actiMF.Rmd when the RStudio loads.
 
 :warning: The login and password are 'rstudio' and 'letmein', respectively.
 

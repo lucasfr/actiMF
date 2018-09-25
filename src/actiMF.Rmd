@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+---
+
+```{r}
+library(ggplot2)
+library(cowplot)
+library(RColorBrewer)
+library(stringr)
+library(boot)
+library(reshape2)
+```
+
+
+```{r}
+source("figure_3/figure_3.R")
+source("figure_4/figure_4.R")
+source("figure_5/figure_5.R")
+source("tests.R")
+```
+
+```{r}
+a <- figure_3()
+a
+```
+Figure 3: Monofractal analysis of actigraphy data for both healthy and fibromyalgia groups. (A) Roughness versus scale for two individuals (one of each group). (B) The distributions are similar, i.e., they have approximate mean, and present values on the persistent behaviour exponents range.
+ 
+ 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+a <- figure_4()
+a
+```
+Figure 4: Multifractal spectra derived for both groups (HC (A and B) and FM (C and D) and states (awake (A and C) and sleep (B and C)). The main feature is the variability of the curves, i.e, individuals present different spectral shapes regardless of their groups. The curves for sleep state show more symmetrical shapes.
+
+
+
+```{r}
+a <- figure_5()
+a
+```
+Figure 5: Differences between ($\alpha_{q-} - \alpha_{0}$) for the awake and sleep states. Each point in the graph represents the difference in the index between the awake and sleep states for one individual. A paired t-test shows statistically significant differences between awake and sleep measures for the healthy group (in blue). Healthy individuals present changes on the variable ($\alpha_{q-} - \alpha_{0}$), implying in changes for smooth movements when comparing awake and sleep states.
+
+
+
+```{r}
+testMat <- tests()
+testMat
+```
+Table 2: Results of paired t-tests comparing multifractal spectrum measures $\alpha_{0} - \alpha_{q+}$, $\alpha_{q-} - \alpha_{0}$, $\alpha_{q-} - \alpha_{q+}$, $D_{0}$, $D_{1}$, and $D_{2}$ for both awake and sleep states, in healthy subjects and individuals with fibromyalgia. FM and HC show similar results all the quantities, except the spectrum width $\alpha_{q-} - \alpha_{q+}$, and the right side of the parabola ($\alpha_{q-} - \alpha_{0}$) for individuals with fibromyalgia. In this case, only healthy individuals show statistically significant differences. *$p<0.05$, ***$p<0.001$.
