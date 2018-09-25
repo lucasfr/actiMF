@@ -1,4 +1,4 @@
-# Multifractals analysis of actigraphy data 
+# Multifractal analysis of actigraphy data 
 
 This repository contains all routines to generate the figures of the article 'On multifractals: a non-linear study of actigraphy data'.
 
