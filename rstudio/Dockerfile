@@ -49,6 +49,7 @@ RUN apt-get update && \
     libnlopt-dev \
     build-essential \
     libcurl4-gnutls-dev \
+    libpango1.0-dev \
     libxml2-dev \
     libssl-dev \ 
     zlib1g-dev \
