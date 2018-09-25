@@ -2,7 +2,7 @@
 
 This repository contains all routines to generate the figures of the article 'On multifractals: a non-linear study of actigraphy data'.
 
-:warning: Please reference the following paper if you use or adapt any of the material available here:
+:warning: Please reference the following paper if you use or adapt any of the materials available here:
 
 :newspaper: França, L. G. S., Montoya, P., & Miranda, J. G. V. On multifractals: a non-linear study of actigraphy data. Physica A: Statistical Mechanics and its Applications [IN PRESS] arXiv preprint [arXiv:1702.03912](https://arxiv.org/abs/1702.03912).
 
@@ -25,18 +25,24 @@ docker-compose up -d
 ## Multifractal Analysis
 
 ```
-docker-compose exec rstudio /bin/sh -c "./run.sh"
+docker-compose exec rstudio /bin/sh -c "./runMF.sh"
+```
+
+Chhabra-Jensen approach routine can be employed in the analysis of different time series with the following command:
+
+```
+# ./mgran file_to_parse q_measures_extension alpha_measures_extension -q +q q_steps max_dyadic_scale R2-q R2-alpha summary_or_spectra ignore_scales >> output_file
 ```
 
 ## Figures
 
-All figures are in a R Markdown document to ease the visualisation. Open the link http://localhost:8787 and then the file actiMF.Rmd when the RStudio loads.
+All figures are in an R Markdown document to ease visualisation. Open the link http://localhost:8787 and then the file actiMF.Rmd when the RStudio loads.
 
 :warning: The login and password are 'rstudio' and 'letmein', respectively.
 
 ## Stopping containers
 
-When you are finish with your analysis stop the Docker container with the command:
+When you are finished with your analysis stop the Docker container with the command:
 
 ```
 docker-compose kill rstudio
@@ -105,7 +111,7 @@ docker-compose kill rstudio
 
 This software is licensed under an MIT License. 
 
-Copyright (c) 2018 [Lucas G S França](https://lucasfr.github.io/), Pedro Montoya, José G V Miranda. 
+Copyright (c) 2018 [Lucas G S França](https://lucasfr.github.io/), [Pedro Montoya](http://pedromontoya.com/), José G V Miranda. 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -124,5 +130,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
