@@ -4,6 +4,8 @@ This repository contains all routines to generate the figures of the article 'On
 
 :warning: Please reference the following paper if you use or adapt any of the material available here:
 
+:newspaper: França, L. G. S., Montoya, P., & Miranda, J. G. V. On multifractals: a non-linear study of actigraphy data. Physica A: Statistical Mechanics and its Applications [IN PRESS] arXiv preprint [arXiv:1702.03912](https://arxiv.org/abs/1702.03912).
+
 ## Download
 
 ```
