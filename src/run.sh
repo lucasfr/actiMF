@@ -36,10 +36,6 @@
 # email address: lucas.franca.14@ucl.ac.uk, vivasm@gmail.com
 # Website: https://lucasfr.github.io/
 
-# CREATING SUMMARY AND DUMP FILES
-touch data/resumDq.dat
-touch data/dump.dat
-
 # COMPILING mgran - CHHABRA-JENSEN MULTIFRACTAL ANALYSIS METHOD ROUTINE
 gcc -o mgran mgran.cpp -lm
 
@@ -59,18 +55,59 @@ chmod u+x mgran
 
 ########################################################################
 
-for file in data/*.txt
+CREATING SUMMARY FILES
+rm data/R/fm/resumDq.dat
+rm data/R/hc/resumDq.dat
+touch data/R/fm/resumDq.dat
+touch data/R/hc/resumDq.dat
+
+rm data/S/fm/resumDq.dat
+rm data/S/hc/resumDq.dat
+touch data/S/fm/resumDq.dat
+touch data/S/hc/resumDq.dat
+
+for file in data/R/fm/*.txt
 do
 
 # SUMMARY EXPORT MODE
 
-./mgran $file tdq.txt tfa.txt -25 25 0.3 9 0.7 0.7 R 2 >> data/resumDq.dat
+./mgran $file tdq.txt tfa.txt -25 25 0.3 9 0.7 0.7 R 2 >> data/R/fm/resumDq.dat
 mv ${file%%.*}.tdq.txt ${file%%.*}._-25_25_0.3_9_0.7_0.7_R_2.tdq.txt
 mv ${file%%.*}.tfa.txt ${file%%.*}._-25_25_0.3_9_0.7_0.7_R_2.tfa.txt
 
+done
+
+
+for file in data/R/hc/*.txt
+do
+
+# SUMMARY EXPORT MODE
+
+./mgran $file tdq.txt tfa.txt -25 25 0.3 9 0.7 0.7 R 2 >> data/R/hc/resumDq.dat
+mv ${file%%.*}.tdq.txt ${file%%.*}._-25_25_0.3_9_0.7_0.7_R_2.tdq.txt
+mv ${file%%.*}.tfa.txt ${file%%.*}._-25_25_0.3_9_0.7_0.7_R_2.tfa.txt
+
+done
+
+
+for file in data/S/fm/*.txt
+do
+
 # SPECTRA MODE
 
-./mgran $file tdq tfa -25 25 0.3 9 0.7 0.7 S 2 >> data/dump.dat
+./mgran $file tdq tfa -25 25 0.3 9 0.7 0.7 S 2 >> data/S/fm/resumDq.dat
 mv ${file%%.*}.tdq ${file%%.*}._-25_25_0.3_9_0.7_0.7_S_2.tdq.txt
 mv ${file%%.*}.tfa ${file%%.*}._-25_25_0.3_9_0.7_0.7_S_2.tfa.txt
+
+done
+
+for file in data/S/hc/*.txt
+do
+
+# SPECTRA MODE
+
+./mgran $file tdq tfa -25 25 0.3 9 0.7 0.7 S 2 >> data/S/hc/resumDq.dat
+mv ${file%%.*}.tdq ${file%%.*}._-25_25_0.3_9_0.7_0.7_S_2.tdq.txt
+mv ${file%%.*}.tfa ${file%%.*}._-25_25_0.3_9_0.7_0.7_S_2.tfa.txt
+
 done
