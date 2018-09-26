@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/139232784.svg)](https://zenodo.org/badge/latestdoi/139232784)
+
+
 # Multifractal analysis of actigraphy data 
 
 This repository contains all routines to generate the figures of the article 'On multifractals: a non-linear study of actigraphy data'.
