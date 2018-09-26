@@ -17,7 +17,7 @@ git clone https://github.com/lucasfr/actiMF
 
 ## Docker containers
 
-To guarantee reproducibility and reduce issues involved in solving dependencies, all the routines available here run in a Docker container so please download and install the last version of the software at their website: https://www.docker.com/
+To guarantee reproducibility and reduce issues involved in solving dependencies, all the routines available here run in a Docker container. Please download the last version of the software at their website: https://www.docker.com/
 
 To run the Docker container with the defined settings, please run:
 
