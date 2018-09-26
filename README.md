@@ -34,7 +34,7 @@ docker-compose exec rstudio /bin/sh -c "./runMF.sh"
 Chhabra-Jensen approach routine can be employed in the analysis of different time series with the following command:
 
 ```
-# ./mgran file_to_parse q_measures_extension alpha_measures_extension -q +q q_steps max_dyadic_scale R2-q R2-alpha summary_or_spectra ignore_scales >> output_file
+./mgran file_to_parse q_measures_extension alpha_measures_extension -q +q q_steps max_dyadic_scale R2-q R2-alpha summary_or_spectra ignore_scales >> output_file
 ```
 
 ## Figures
