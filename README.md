@@ -9,6 +9,10 @@ This repository contains all routines to generate the figures of the article 'On
 
 :newspaper: França, L. G. S., Montoya, P., & Miranda, J. G. V. (2018). On multifractals: A non-linear study of actigraphy data. Physica A: Statistical Mechanics and Its Applications. https://doi.org/10.1016/J.PHYSA.2018.09.122 [arXiv:1702.03912](https://arxiv.org/abs/1702.03912).
 
+:warning: See also:
+
+:newspaper: FRANÇA, L. G. S.; MIRANDA, J. G. V.; LEITE, M.; SHARMA, N. K.; WALKER, M. C.; LEMIEUX, L.; WANG, Y. Fractal and multifractal properties of electrographic recordings of human brain activity: Towards its use as a signal feature for machine learning in clinical applications. Frontiers in Physiology. [IN PRESS]. https://doi.org/10.3389/fphys.2018.01767 GitHub Repository: [yujiangwang/MultiFractalEEG](https://github.com/yujiangwang/MultiFractalEEG)
+
 ## Download
 
 ```
