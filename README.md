@@ -11,7 +11,7 @@ This repository contains all routines to generate the figures of the article 'On
 
 :warning: See also:
 
-:newspaper: FRANÇA, L. G. S.; MIRANDA, J. G. V.; LEITE, M.; SHARMA, N. K.; WALKER, M. C.; LEMIEUX, L.; WANG, Y. Fractal and multifractal properties of electrographic recordings of human brain activity: Towards its use as a signal feature for machine learning in clinical applications. Frontiers in Physiology. [IN PRESS]. https://doi.org/10.3389/fphys.2018.01767 GitHub Repository: [yujiangwang/MultiFractalEEG](https://github.com/yujiangwang/MultiFractalEEG)
+:newspaper: FRANÇA, L. G. S.; MIRANDA, J. G. V.; LEITE, M.; SHARMA, N. K.; WALKER, M. C.; LEMIEUX, L.; WANG, Y. Fractal and multifractal properties of electrographic recordings of human brain activity: Towards its use as a signal feature for machine learning in clinical applications. Frontiers in Physiology. https://doi.org/10.3389/fphys.2018.01767 GitHub Repository: [yujiangwang/MultiFractalEEG](https://github.com/yujiangwang/MultiFractalEEG)
 
 ## Download
 
